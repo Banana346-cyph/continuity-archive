@@ -118,8 +118,6 @@ RECOVERY NOTE:
 Interviewer voiceprint overlaps with prior communication logs under alternate personnel IDs.
 Possible systemic identity reuse detected across multiple staff records.
 
-METADATA TAG RECOVERED:
-CA-77-GSVXLWV
 
 ------------------------------------------------------------
 
