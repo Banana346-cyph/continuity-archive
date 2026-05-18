@@ -1,0 +1,95 @@
+FILE ID: CA-PER-ELIAS-00A
+CLASSIFICATION: INTERNAL USE ONLY
+STATUS: PARTIALLY RECOVERED / INCONSISTENT TIMELINE
+
+------------------------------------------------------------
+
+PERSONNEL DESIGNATION
+
+NAME: Elias Ward  
+ROLE: Communications Director  
+DEPARTMENT: Continuity Communications Division  
+CLEARANCE LEVEL: 4  
+CONTINUITY INDEX: 041  
+
+DATE OF HIRE: 2019-06-14  
+LAST VERIFIED ACCESS: 2024-11-03  
+
+------------------------------------------------------------
+
+EMPLOYMENT STATUS LOG
+
+INITIAL STATUS:
+ACTIVE
+
+ACTIVE PERIOD:
+2019-06-14 → 2024-11-03
+
+Last confirmed operational activity:
+Outbound message routing  
+Archive synchronization support  
+Inter-node communication maintenance  
+
+------------------------------------------------------------
+
+SYSTEM NOTICE (TEMPORARY UPDATE)
+
+DATE ISSUED: 2024-11-17  
+SYSTEM VERSION: ARCHIVE SYNC PATCH v3.2
+
+SUBJECT: Elias Ward
+
+STATUS UPDATE:
+NOT FOUND IN CURRENT PERSONNEL REGISTRY
+
+EFFECTIVE DATE OF CHANGE:
+2024-11-04 (retroactive system reconciliation point)
+
+NOTES:
+- Subject record missing from active directory index  
+- Legacy communication logs remain partially accessible  
+- Identity verification handshake failed during registry rebuild cycle  
+
+RECOMMENDATION:
+Do not initiate direct contact protocols until registry alignment is restored.
+
+------------------------------------------------------------
+
+ARCHIVAL CROSS-REFERENCE ERROR
+
+DATE DETECTED: 2024-11-18
+
+WARNING:
+Multiple legacy entries referencing "ELIAS WARD" conflict with current registry state.
+
+Matched anomaly:
+CONTINUITY INDEX 041 appears in non-matching personnel entry.
+
+System interpretation:
+Possible identity overlap or reassignment collision detected during persistence testing cycle.
+
+------------------------------------------------------------
+
+RECOVERY FOOTNOTE (UNVERIFIED)
+
+SOURCE: ISOLATED METADATA FRAGMENT // NODE CACHE RECOVERY
+
+Timestamp (estimated): 2024-11-04 03:22:19 UTC
+
+Recovered statement:
+
+"Subject reassigned following continuity failure during persistence testing.
+Original designation removed to prevent recursive identity conflict."
+
+------------------------------------------------------------
+
+STATUS SUMMARY:
+
+ELIAS WARD  
+→ ACTIVE (2019-06-14 → 2024-11-03)  
+→ MISSING (2024-11-04 onward)  
+→ CLASSIFIED REASSIGNMENT (post 2024-11-04, unverified)
+
+------------------------------------------------------------
+
+END OF FILE
