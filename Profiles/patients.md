@@ -59,7 +59,8 @@ Subject exhibits signs of continuity drift. Further observation required.
 **Notes:**
 - Subject repeatedly references “missing conversations” and “unanswered interactions”  
 - No stable entry point in active registry  
-- Appears across multiple recovered transcript fragments without consistent timeline alignment  
+- Appears across multiple recovered transcript fragments without consistent timeline alignment
+- Most communication attempts are starting to fail. Subject is becoming unresponsive.
 
 **System Summary:**
 Entity may not represent a single individual. Possible recursive identity pattern detected.
