@@ -1,0 +1,126 @@
+CONTINUITY ARCHIVE // RECOVERED TRANSCRIPT
+FILE: CA-TRANS-22B
+SOURCE: AUDIO RECOVERY NODE 5 (PARTIAL CORRUPTION)
+
+STATUS: INCOMPLETE / SIGNAL RECONSTRUCTED
+
+------------------------------------------------------------
+
+INTERVIEWER: Elias Ward  
+SUBJECT: Participant 018 (“Jonah Mercer”)  
+DATE: [REDACTED]  
+LOCATION: Communications Wing / Isolation Booth 1
+
+------------------------------------------------------------
+
+[00:00:06]
+
+ELIAS WARD:
+State your identifier for the record.
+
+JONAH MERCER:
+You already have it. I’ve entered it three times today.
+
+ELIAS WARD:
+This is the first recorded session.
+
+JONAH MERCER:
+No. It isn’t.
+
+[pause]
+
+ELIAS WARD:
+We’re experiencing minor archival desync. Please proceed.
+
+JONAH MERCER:
+That’s what you said last time. And the time before that.
+
+------------------------------------------------------------
+
+[00:01:12]
+
+ELIAS WARD:
+Do you remember the purpose of your assignment?
+
+JONAH MERCER:
+To fix what keeps breaking.
+
+ELIAS WARD:
+And what is breaking?
+
+JONAH MERCER:
+The parts that remember me correctly.
+
+[pause]
+
+ELIAS WARD:
+That is not a valid system response.
+
+JONAH MERCER:
+It is if you’ve heard it enough times.
+
+------------------------------------------------------------
+
+[00:02:03]
+
+ELIAS WARD:
+Have you experienced auditory persistence after session termination?
+
+JONAH MERCER:
+I hear the system continuing without me.
+
+ELIAS WARD:
+Clarify.
+
+JONAH MERCER:
+Voices keep running logs I’m not in anymore.
+
+[pause]
+
+JONAH MERCER:
+Sometimes I think I’m the error they never fixed.
+
+------------------------------------------------------------
+
+[00:03:27 — SIGNAL DISTORTION DETECTED]
+
+ELIAS WARD:
+We are approaching stabilization. You will feel improvement after—
+
+JONAH MERCER:
+Stop saying “we.”
+
+ELIAS WARD:
+That is standard phrasing.
+
+JONAH MERCER:
+No. It’s a habit you use when you don’t want to say “I.”
+
+[pause]
+
+ELIAS WARD:
+End session.
+
+JONAH MERCER:
+You already did.
+
+ELIAS WARD:
+End session.
+
+JONAH MERCER:
+Or you will again.
+
+------------------------------------------------------------
+
+[FILE CORRUPTION EVENT: TIMESTAMP LOOP DETECTED]
+
+RECOVERY NOTE:
+Interviewer voiceprint overlaps with prior communication logs under alternate personnel IDs.
+Possible systemic identity reuse detected across multiple staff records.
+
+METADATA TAG RECOVERED:
+CA-77-GSVXLWV
+
+------------------------------------------------------------
+
+END OF TRANSCRIPT
