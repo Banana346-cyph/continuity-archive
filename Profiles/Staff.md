@@ -23,7 +23,7 @@ STATUS: 🟢 ACTIVE
 
 <img src="https://via.placeholder.com/200x250/111111/555555?text=IMAGE+UNAVAILABLE" width="200">
 
-### Jonah Mercer
+### Jack Foreum
 **Systems Recovery Technician**
 
 STATUS: 🟡 UNKNOWN
