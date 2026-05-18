@@ -1,15 +1,14 @@
-# Department of Social Continuity
+# CONTINUITY ARCHIVE
 
-Public-facing materials repository.
+## SYSTEM NOTICE
 
-Contains approved:
-- research summaries
-- publication archives
-- personnel listings
-- outreach documentation
+This directory is no longer maintained.
 
-Some assets omitted during migration.
+Some files have been corrupted or permanently removed.
 
-For internal archival requests contact:
-records@dsc.gov
-There are no active field offices.
+Do not attempt recovery.
+
+---
+Ref: CA-77-VMYZRP
+
+Note: classification system mismatch detected in legacy encoding layer. (Error code from system:ATBASH)
