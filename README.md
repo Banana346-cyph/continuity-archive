@@ -12,3 +12,4 @@ Some assets omitted during migration.
 
 For internal archival requests contact:
 records@dsc.gov
+There are no active field offices.
