@@ -78,6 +78,7 @@
         text-decoration:none;
         letter-spacing:2px;
         transition:0.3s;
+        cursor:pointer;
     }
 
     .button:hover{
@@ -121,15 +122,6 @@
         transform:translateY(-4px);
     }
 
-    .card h3{
-        margin-top:0;
-        letter-spacing:1px;
-    }
-
-    .card p{
-        color:#8f8f8f;
-    }
-
     footer{
         border-top:1px solid #222;
         text-align:center;
@@ -143,10 +135,6 @@
         font-size:11px;
         margin-top:20px;
         letter-spacing:1px;
-    }
-
-    .tiny:hover{
-        color:#555;
     }
 </style>
 </head>
@@ -168,12 +156,11 @@
     <h1>PRESERVING CONTINUITY</h1>
 
     <p>
-        Continuity Labs develops adaptive communication systems and
-        behavioral persistence technologies designed to maintain
-        long-term cognitive and emotional stability across isolated environments.
+        Continuity Labs develops adaptive communication systems and behavioral stability frameworks for long-term cognitive environments.
     </p>
 
-    <a class="button" href="#">VIEW RESEARCH DIVISIONS</a>
+    <!-- UPDATED BUTTON -->
+    <div class="button" onclick="breachArchive()">VIEW RESEARCH DIVISIONS</div>
 
     <div class="tiny">
         continuity requires consistency
@@ -181,76 +168,91 @@
 </section>
 
 <section class="section">
-
     <h2>Research Initiatives</h2>
 
     <p>
-        Our facilities specialize in communication persistence,
-        continuity reinforcement, memory stabilization frameworks,
-        and identity retention methodologies for long-duration environments.
+        Our facilities specialize in communication persistence, identity stabilization, and archival reconstruction systems.
     </p>
 
     <div class="grid">
-
         <div class="card">
             <h3>Behavioral Continuity</h3>
-            <p>
-                Studying long-term emotional retention patterns
-                under isolated communication conditions.
-            </p>
+            <p>Emotional retention under isolation conditions.</p>
         </div>
 
         <div class="card">
             <h3>Identity Persistence</h3>
-            <p>
-                Monitoring consistency between recorded subject states
-                across segmented evaluation cycles.
-            </p>
+            <p>Tracking subject consistency across time-segmented records.</p>
         </div>
 
         <div class="card">
             <h3>Archive Reconstruction</h3>
-            <p>
-                Recovering fragmented communication records from
-                degraded continuity systems.
-            </p>
+            <p>Recovering corrupted continuity logs.</p>
         </div>
-
     </div>
-
-</section>
-
-<section class="section">
-
-    <h2>Internal Notice</h2>
-
-    <p>
-        Due to recent synchronization inconsistencies,
-        portions of the personnel archive may display outdated
-        or incomplete information.
-    </p>
-
-    <p>
-        Continuity Labs is currently reviewing all affected records.
-    </p>
-
 </section>
 
 <footer>
-
     Continuity Labs Internal Network v3.2
-
     <br><br>
-
-    Unauthorized access attempts are automatically archived.
+    Unauthorized access is logged.
 
     <div class="tiny">
         Ref: CA-77-GSVXLWV
     </div>
-
 </footer>
 
-<!-- subject continues responding to previous designation -->
+<!-- GLITCH SCRIPT -->
+<script>
+
+function breachArchive(){
+
+    let overlay = document.createElement("div");
+
+    overlay.style.position = "fixed";
+    overlay.style.top = "0";
+    overlay.style.left = "0";
+    overlay.style.width = "100%";
+    overlay.style.height = "100%";
+    overlay.style.background = "#000";
+    overlay.style.color = "#00ff88";
+    overlay.style.fontFamily = "monospace";
+    overlay.style.fontSize = "16px";
+    overlay.style.padding = "40px";
+    overlay.style.zIndex = "99999";
+    overlay.style.whiteSpace = "pre-line";
+
+    document.body.appendChild(overlay);
+
+    let messages = [
+        "INITIALIZING CONTINUITY ARCHIVE CONNECTION...",
+        "VERIFYING PERMISSIONS...",
+        "ACCESS REQUEST: RESEARCH DIVISIONS",
+        "STATUS: DENIED",
+        "OVERRIDE DETECTED...",
+        "FOREUM AUTHORIZATION FOUND",
+        "SYSTEM RESPONSE: ACCEPTED",
+        "REDIRECTING..."
+    ];
+
+    let i = 0;
+
+    function showMessage(){
+        if(i < messages.length){
+            overlay.innerHTML += "> " + messages[i] + "\n";
+            i++;
+            setTimeout(showMessage, 700);
+        } else {
+            setTimeout(function(){
+                window.location.href = "https://github.com/Banana346-cyph/continuity-archive/tree/main/pdfs";
+            }, 1200);
+        }
+    }
+
+    showMessage();
+}
+
+</script>
 
 </body>
 </html>
