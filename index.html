@@ -1,1 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Continuity Labs</title>
 
+<style>
+    body{
+        margin:0;
+        background:#0b0b0b;
+        color:#d9d9d9;
+        font-family:Arial, Helvetica, sans-serif;
+        overflow-x:hidden;
+    }
+
+    header{
+        background:#111;
+        border-bottom:1px solid #222;
+        padding:25px 60px;
+        display:flex;
+        justify-content:space-between;
+        align-items:center;
+    }
+
+    .logo{
+        font-size:26px;
+        letter-spacing:3px;
+        font-weight:bold;
+    }
+
+    nav a{
+        color:#8c8c8c;
+        text-decoration:none;
+        margin-left:25px;
+        transition:0.3s;
+        font-size:14px;
+    }
+
+    nav a:hover{
+        color:#ffffff;
+    }
+
+    .hero{
+        height:90vh;
+        display:flex;
+        flex-direction:column;
+        justify-content:center;
+        align-items:center;
+        text-align:center;
+        padding:0 20px;
+        background:
+        linear-gradient(rgba(0,0,0,0.72), rgba(0,0,0,0.82)),
+        url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1600&auto=format&fit=crop') center/cover;
+    }
+
+    .hero h1{
+        font-size:68px;
+        margin:0;
+        letter-spacing:6px;
+        font-weight:700;
+    }
+
+    .hero p{
+        margin-top:20px;
+        max-width:700px;
+        color:#9a9a9a;
+        line-height:1.7;
+        font-size:18px;
+    }
+
+    .button{
+        margin-top:35px;
+        padding:14px 30px;
+        background:#1a1a1a;
+        border:1px solid #333;
+        color:#d9d9d9;
+        text-decoration:none;
+        letter-spacing:2px;
+        transition:0.3s;
+    }
+
+    .button:hover{
+        background:#262626;
+        border-color:#666;
+    }
+
+    .section{
+        max-width:1100px;
+        margin:auto;
+        padding:90px 30px;
+    }
+
+    .section h2{
+        font-size:34px;
+        margin-bottom:20px;
+        letter-spacing:2px;
+    }
+
+    .section p{
+        color:#9d9d9d;
+        line-height:1.8;
+    }
+
+    .grid{
+        display:grid;
+        grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+        gap:25px;
+        margin-top:50px;
+    }
+
+    .card{
+        background:#141414;
+        border:1px solid #252525;
+        padding:30px;
+        transition:0.3s;
+    }
+
+    .card:hover{
+        border-color:#555;
+        transform:translateY(-4px);
+    }
+
+    .card h3{
+        margin-top:0;
+        letter-spacing:1px;
+    }
+
+    .card p{
+        color:#8f8f8f;
+    }
+
+    footer{
+        border-top:1px solid #222;
+        text-align:center;
+        color:#4f4f4f;
+        padding:40px;
+        font-size:13px;
+    }
+
+    .tiny{
+        color:#2b2b2b;
+        font-size:11px;
+        margin-top:20px;
+        letter-spacing:1px;
+    }
+
+    .tiny:hover{
+        color:#555;
+    }
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">CONTINUITY LABS</div>
+
+    <nav>
+        <a href="#">Research</a>
+        <a href="#">Personnel</a>
+        <a href="#">Programs</a>
+        <a href="#">Archive</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <h1>PRESERVING CONTINUITY</h1>
+
+    <p>
+        Continuity Labs develops adaptive communication systems and
+        behavioral persistence technologies designed to maintain
+        long-term cognitive and emotional stability across isolated environments.
+    </p>
+
+    <a class="button" href="#">VIEW RESEARCH DIVISIONS</a>
+
+    <div class="tiny">
+        continuity requires consistency
+    </div>
+</section>
+
+<section class="section">
+
+    <h2>Research Initiatives</h2>
+
+    <p>
+        Our facilities specialize in communication persistence,
+        continuity reinforcement, memory stabilization frameworks,
+        and identity retention methodologies for long-duration environments.
+    </p>
+
+    <div class="grid">
+
+        <div class="card">
+            <h3>Behavioral Continuity</h3>
+            <p>
+                Studying long-term emotional retention patterns
+                under isolated communication conditions.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Identity Persistence</h3>
+            <p>
+                Monitoring consistency between recorded subject states
+                across segmented evaluation cycles.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Archive Reconstruction</h3>
+            <p>
+                Recovering fragmented communication records from
+                degraded continuity systems.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+<section class="section">
+
+    <h2>Internal Notice</h2>
+
+    <p>
+        Due to recent synchronization inconsistencies,
+        portions of the personnel archive may display outdated
+        or incomplete information.
+    </p>
+
+    <p>
+        Continuity Labs is currently reviewing all affected records.
+    </p>
+
+</section>
+
+<footer>
+
+    Continuity Labs Internal Network v3.2
+
+    <br><br>
+
+    Unauthorized access attempts are automatically archived.
+
+    <div class="tiny">
+        Ref: CA-77-GSVXLWV
+    </div>
+
+</footer>
+
+<!-- subject continues responding to previous designation -->
+
+</body>
+</html>
