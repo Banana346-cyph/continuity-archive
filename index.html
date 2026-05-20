@@ -1,86 +1,28 @@
+<!-- GLITCH SCRIPT -->
 <script>
 
-function breachArchive() {
+function breachArchive(){
 
-    // Prevent duplicate overlays
-    if (document.getElementById("archiveOverlay")) return;
+    // CREATE OVERLAY
+    let overlay = document.createElement("div");
 
-    // MAIN OVERLAY
-    const overlay = document.createElement("div");
-    overlay.id = "archiveOverlay";
-
-    overlay.style.cssText = `
-        position: fixed;
-        inset: 0;
-        background: #000;
-        color: #00ff88;
-        font-family: monospace;
-        overflow: hidden;
-        z-index: 999999;
-    `;
+    overlay.style.position = "fixed";
+    overlay.style.top = "0";
+    overlay.style.left = "0";
+    overlay.style.width = "100%";
+    overlay.style.height = "100%";
+    overlay.style.background = "#000";
+    overlay.style.color = "#00ff88";
+    overlay.style.fontFamily = "monospace";
+    overlay.style.fontSize = "16px";
+    overlay.style.padding = "40px";
+    overlay.style.zIndex = "99999";
+    overlay.style.whiteSpace = "pre-line";
+    overlay.style.boxSizing = "border-box";
 
     document.body.appendChild(overlay);
 
-    // CONTENT CONTAINER
-    const container = document.createElement("div");
-
-    container.style.cssText = `
-        position: relative;
-        width: 100%;
-        height: 100%;
-        padding: 40px;
-        box-sizing: border-box;
-    `;
-
-    overlay.appendChild(container);
-
-    // SCANLINES
-    const scanlines = document.createElement("div");
-
-    scanlines.style.cssText = `
-        position:absolute;
-        inset:0;
-        background:
-        repeating-linear-gradient(
-            to bottom,
-            rgba(255,255,255,0.03) 0px,
-            rgba(255,255,255,0.03) 1px,
-            transparent 2px,
-            transparent 4px
-        );
-        pointer-events:none;
-        opacity:0.35;
-    `;
-
-    overlay.appendChild(scanlines);
-
-    // TEXT LAYERS
-    function makeLayer(color){
-
-        const layer = document.createElement("div");
-
-        layer.style.cssText = `
-            position:absolute;
-            top:40px;
-            left:40px;
-            right:40px;
-            white-space:pre-line;
-            font-size:16px;
-            line-height:1.7;
-            color:${color};
-        `;
-
-        container.appendChild(layer);
-
-        return layer;
-    }
-
-    const red = makeLayer("rgba(255,0,0,0.35)");
-    const blue = makeLayer("rgba(0,150,255,0.35)");
-    const green = makeLayer("#00ff88");
-
-    // MESSAGES
-    const messages = [
+    let messages = [
         "INITIALIZING CONTINUITY ARCHIVE CONNECTION...",
         "VERIFYING PERMISSIONS...",
         "ACCESS REQUEST: RESEARCH DIVISIONS",
@@ -91,153 +33,31 @@ function breachArchive() {
         "REDIRECTING..."
     ];
 
-    let completedText = "";
-    let currentMessage = 0;
+    let i = 0;
 
-    // TEXT SCRAMBLE
-    function corrupt(text){
+    function showMessage(){
 
-        const chars = "!<>-_\\/[]{}=+*^?#";
+        if(i < messages.length){
 
-        return text.split("").map(char => {
+            overlay.innerHTML += "> " + messages[i] + "<br>";
 
-            if(char !== " " && Math.random() < 0.05){
+            i++;
 
-                return chars[
-                    Math.floor(Math.random() * chars.length)
-                ];
-            }
-
-            return char;
-
-        }).join("");
-    }
-
-    // RENDER TEXT
-    function render(text){
-
-        green.textContent = text;
-        red.textContent = text;
-        blue.textContent = text;
-    }
-
-    // GLITCH LOOP
-    function glitchLoop(){
-
-        const x = (Math.random() - 0.5) * 8;
-        const y = (Math.random() - 0.5) * 4;
-
-        red.style.transform =
-            `translate(${x}px, ${y}px)`;
-
-        blue.style.transform =
-            `translate(${-x}px, ${-y}px)`;
-
-        // Tiny screen shake
-        if(Math.random() > 0.97){
-
-            overlay.style.transform =
-                `translateX(${Math.random()*6-3}px)`;
+            setTimeout(showMessage, 700);
 
         } else {
 
-            overlay.style.transform = "translateX(0px)";
-        }
-
-        requestAnimationFrame(glitchLoop);
-    }
-
-    glitchLoop();
-
-    // TYPEWRITER
-    function typeMessage(message, callback){
-
-        let current = "";
-        let index = 0;
-
-        function tick(){
-
-            if(index < message.length){
-
-                current += message[index];
-
-                render(
-                    completedText +
-                    "> " +
-                    corrupt(current)
-                );
-
-                index++;
-
-                // random flash
-                if(Math.random() > 0.985){
-
-                    overlay.style.background = "#031";
-
-                    setTimeout(()=>{
-                        overlay.style.background = "#000";
-                    },40);
-                }
-
-                setTimeout(
-                    tick,
-                    20 + Math.random() * 30
-                );
-
-            } else {
-
-                completedText +=
-                    "> " + message + "\n";
-
-                render(completedText);
-
-                callback();
-            }
-        }
-
-        tick();
-    }
-
-    // NEXT MESSAGE
-    function next(){
-
-        if(currentMessage < messages.length){
-
-            typeMessage(
-                messages[currentMessage],
-                () => {
-
-                    currentMessage++;
-
-                    setTimeout(next, 500);
-                }
-            );
-
-        } else {
-
-            // FINAL SCREEN
-            setTimeout(() => {
-
-                render(
-`> ACCESS GRANTED
-
-OPENING ARCHIVE...`
-                );
-
-            }, 700);
-
-            // REDIRECT
-            setTimeout(() => {
+            setTimeout(function(){
 
                 // CHANGE THIS TO YOUR REAL PAGE
                 window.location.href =
                 "https://banana346-cyph.github.io/continuity-archive/";
 
-            }, 2200);
+            },1200);
         }
     }
 
-    next();
+    showMessage();
 }
 
 </script>
