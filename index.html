@@ -1,60 +1,72 @@
-<!-- GLITCH SCRIPT -->
 <script>
 
 function breachArchive(){
 
-    // CREATE OVERLAY
-    let overlay = document.createElement("div");
+    // PREVENT DOUBLE TRIGGER
+    if(document.getElementById("archiveOverlay")) return;
 
-    overlay.style.position = "fixed";
-    overlay.style.top = "0";
-    overlay.style.left = "0";
-    overlay.style.width = "100%";
-    overlay.style.height = "100%";
-    overlay.style.background = "#000";
-    overlay.style.color = "#00ff88";
-    overlay.style.fontFamily = "monospace";
-    overlay.style.fontSize = "16px";
-    overlay.style.padding = "40px";
-    overlay.style.zIndex = "99999";
-    overlay.style.whiteSpace = "pre-line";
-    overlay.style.overflow = "hidden";
+    // OVERLAY
+    const overlay = document.createElement("div");
+    overlay.id = "archiveOverlay";
+
+    overlay.style.cssText = `
+        position:fixed;
+        inset:0;
+        background:#000;
+        color:#00ff88;
+        font-family:monospace;
+        font-size:16px;
+        padding:40px;
+        z-index:99999;
+        overflow:hidden;
+    `;
+
+    document.body.appendChild(overlay);
 
     // SCANLINES
-    overlay.style.backgroundImage = `
+    const scanlines = document.createElement("div");
+
+    scanlines.style.cssText = `
+        position:absolute;
+        inset:0;
+        pointer-events:none;
+        background:
         repeating-linear-gradient(
             to bottom,
             rgba(255,255,255,0.03) 0px,
             rgba(255,255,255,0.03) 1px,
             transparent 2px,
             transparent 4px
-        )
+        );
+        mix-blend-mode:overlay;
     `;
 
-    document.body.appendChild(overlay);
+    overlay.appendChild(scanlines);
 
-    // RGB GLITCH LAYERS
-    let red = document.createElement("div");
-    let blue = document.createElement("div");
-    let text = document.createElement("div");
+    // TEXT LAYERS
+    const red = document.createElement("div");
+    const blue = document.createElement("div");
+    const green = document.createElement("div");
 
-    [red, blue, text].forEach(layer => {
-        layer.style.position = "absolute";
-        layer.style.top = "40px";
-        layer.style.left = "40px";
-        layer.style.right = "40px";
-        layer.style.whiteSpace = "pre-line";
+    [red, blue, green].forEach(layer => {
+
+        layer.style.cssText = `
+            position:absolute;
+            top:40px;
+            left:40px;
+            right:40px;
+            white-space:pre-line;
+            line-height:1.6;
+        `;
+
+        overlay.appendChild(layer);
     });
 
-    red.style.color = "rgba(255,0,0,0.5)";
-    blue.style.color = "rgba(0,180,255,0.5)";
-    text.style.color = "#00ff88";
+    red.style.color = "rgba(255,0,0,0.45)";
+    blue.style.color = "rgba(0,180,255,0.45)";
+    green.style.color = "#00ff88";
 
-    overlay.appendChild(red);
-    overlay.appendChild(blue);
-    overlay.appendChild(text);
-
-    let messages = [
+    const messages = [
         "INITIALIZING CONTINUITY ARCHIVE CONNECTION...",
         "VERIFYING PERMISSIONS...",
         "ACCESS REQUEST: RESEARCH DIVISIONS",
@@ -66,141 +78,150 @@ function breachArchive(){
     ];
 
     let output = "";
-    let i = 0;
+    let msgIndex = 0;
 
-    // RANDOM CHARACTER SCRAMBLE
-    function corrupt(str){
-        let chars = "!<>-_\\/[]{}—=+*^?#________";
-        return str.split("").map(c => {
-            if(Math.random() < 0.08){
+    // RANDOM CHARACTER CORRUPTION
+    function corrupt(text){
+
+        const chars = "!<>-_\\/[]{}=+*^?#";
+
+        return text.split("").map(letter => {
+
+            if(Math.random() < 0.06 && letter !== " "){
                 return chars[Math.floor(Math.random()*chars.length)];
             }
-            return c;
+
+            return letter;
+
         }).join("");
     }
 
-    // GLITCH EFFECT
-    function glitch(){
+    // UPDATE ALL LAYERS
+    function render(content){
 
-        let offsetX = (Math.random() - 0.5) * 8;
-        let offsetY = (Math.random() - 0.5) * 4;
-
-        red.style.transform =
-            `translate(${offsetX}px, ${offsetY}px)`;
-
-        blue.style.transform =
-            `translate(${-offsetX}px, ${-offsetY}px)`;
-
-        overlay.style.opacity =
-            Math.random() > 0.96 ? "0.92" : "1";
-
-        // SCREEN TEAR
-        if(Math.random() > 0.93){
-            overlay.style.transform =
-                `translateY(${Math.random()*8-4}px) skewX(${Math.random()*4-2}deg)`;
-        } else {
-            overlay.style.transform = "none";
-        }
-
-        requestAnimationFrame(glitch);
+        green.innerHTML = content;
+        red.innerHTML = content;
+        blue.innerHTML = content;
     }
 
-    glitch();
+    // CONTINUOUS GLITCH
+    function animateGlitch(){
 
-    // TYPEWRITER EFFECT
-    function typeLine(line, callback){
+        const x = (Math.random() - 0.5) * 6;
+        const y = (Math.random() - 0.5) * 3;
+
+        red.style.transform =
+            `translate(${x}px, ${y}px)`;
+
+        blue.style.transform =
+            `translate(${-x}px, ${-y}px)`;
+
+        // OCCASIONAL SCREEN SHAKE
+        if(Math.random() > 0.96){
+
+            overlay.style.transform =
+                `translateX(${Math.random()*8-4}px)`;
+
+        } else {
+
+            overlay.style.transform = "translateX(0px)";
+        }
+
+        requestAnimationFrame(animateGlitch);
+    }
+
+    animateGlitch();
+
+    // TYPEWRITER
+    function typeMessage(message, done){
 
         let current = "";
-        let index = 0;
+        let charIndex = 0;
 
         function type(){
 
-            if(index < line.length){
+            if(charIndex < message.length){
 
-                current += line[index];
+                current += message[charIndex];
 
-                let corrupted = corrupt(current);
+                render(output + "> " + corrupt(current));
 
-                text.innerHTML = output + "> " + corrupted;
-                red.innerHTML = text.innerHTML;
-                blue.innerHTML = text.innerHTML;
-
-                index++;
-
-                let speed = Math.random() * 40 + 20;
+                charIndex++;
 
                 // RANDOM FLASH
-                if(Math.random() > 0.96){
-                    overlay.style.backgroundColor = "#021";
+                if(Math.random() > 0.97){
+
+                    overlay.style.background = "#021";
+
                     setTimeout(()=>{
-                        overlay.style.backgroundColor = "#000";
-                    },60);
+                        overlay.style.background = "#000";
+                    },50);
                 }
 
-                setTimeout(type, speed);
+                setTimeout(type, 25 + Math.random()*35);
 
             } else {
 
-                output += "> " + line + "\n";
+                output += "> " + message + "\n";
 
-                text.innerHTML = output;
-                red.innerHTML = output;
-                blue.innerHTML = output;
+                render(output);
 
-                callback();
+                done();
             }
         }
 
         type();
     }
 
-    function nextMessage(){
+    // MESSAGE LOOP
+    function next(){
 
-        if(i < messages.length){
+        if(msgIndex < messages.length){
 
-            typeLine(messages[i], () => {
-                i++;
-                setTimeout(nextMessage, 500);
+            typeMessage(messages[msgIndex], ()=>{
+
+                msgIndex++;
+
+                setTimeout(next, 500);
+
             });
 
         } else {
 
-            // FINAL HEAVY GLITCH
-            overlay.style.animation = "shake 0.08s infinite";
+            // FINAL EFFECT
+            overlay.style.animation =
+                "finalGlitch 0.08s infinite";
 
-            setTimeout(function(){
+            setTimeout(()=>{
 
-                overlay.innerHTML = `
-                    <div style="
-                        color:#ff0033;
-                        font-size:32px;
-                        text-align:center;
-                        margin-top:20vh;
-                        letter-spacing:6px;
-                    ">
-                        ACCESS GRANTED
-                    </div>
-                `;
+                render(`
+ACCESS GRANTED
 
-                setTimeout(function(){
-                    window.location.href =
-                    "https://github.com/Banana346-cyph/continuity-archive/tree/main/pdfs";
-                },1500);
+OPENING ARCHIVE...
+                `);
 
-            },1000);
+            },800);
+
+            setTimeout(()=>{
+
+                window.location.href =
+                "https://github.com/Banana346-cyph/continuity-archive/tree/main/pdfs";
+
+            },2200);
         }
     }
 
-    nextMessage();
+    next();
 }
 
-// SHAKE ANIMATION
+// GLITCH KEYFRAMES
 const style = document.createElement("style");
 
 style.innerHTML = `
-@keyframes shake{
-    0%{transform:translate(2px,1px);}
-    20%{transform:translate(-2px,0);}
+@keyframes finalGlitch{
+
+    0%{transform:translate(2px,0);}
+    20%{transform:translate(-2px,1px);}
     40%{transform:translate(3px,-1px);}
     60%{transform:translate(-3px,1px);}
     80%{transform:translate(1px,-2px);}
